@@ -6,7 +6,7 @@ outputs:
     description: Workflow conclusion. `success` or `failure`.
     value: ${{ fromJSON(steps.ghapi.outputs.result).conclusion }}
   jobs:
-    description: Number of jobs in workflow
+    description: Number of jobs in workflow. This includes the jobs currently running.
     value: ${{ fromJSON(steps.ghapi.outputs.result).jobs }}
 
 runs:
@@ -26,7 +26,7 @@ runs:
           )
 
           const ret = {
-            conclusion: jobs.filter(job => job.conclusion !== "success")
+            conclusion: jobs.filter(job => job.conclusion !== null && job.conclusion !== "success")
                           .length > 0 ? 'failure' : 'success',
             jobs: jobs.length
           }
