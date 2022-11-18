@@ -14,11 +14,12 @@ jobs:
     steps:
       - run: echo runnning on ${{ matrix.os }}
         shell: bash
-      # - run: exit 1
-      #   shell: bash
+      - run: exit 1
+        shell: bash
     
   conclusion:
     needs: matrix-task
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
