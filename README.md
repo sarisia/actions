@@ -17,5 +17,7 @@ jobs:
     steps:
       - uses: sarisia/actions/conclusion@main
         id: conclusion
-      - run: echo result is ${{ steps.conclusion.outputs.conclusion }} # `success` or `failure`
+      - run: |
+          echo result is ${{ steps.conclusion.outputs.conclusion }}
+          echo jobs is ${{ steps.conclusion.outputs.jobs }}
 ```
