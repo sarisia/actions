@@ -1,0 +1,26 @@
+name: Workflow Conclusion
+author: Sarisia
+
+outputs:
+  conclusion:
+    description: Workflow conclusion. `success` or `failure`.
+    value: ${{ steps.ghapi.outputs.result }}
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/github-script@d556feaca394842dc55e4734bf3bb9f685482fa0
+      id: ghapi
+      with:
+        result-encoding: string
+        script: |
+          const jobs = await github.paginate(
+            github.rest.actions.listJobsForWorkflowRun,
+            {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            }
+          )
+          return jobs.filter(job => job.conclusion !== null && job.conclusion !== "success")
+                      .length > 0 ? 'failure' : 'success'
