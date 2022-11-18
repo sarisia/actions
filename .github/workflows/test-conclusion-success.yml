@@ -1,0 +1,26 @@
+name: test conclusion (success)
+on:
+  push:
+
+jobs:
+  matrix-task:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: echo runnning on ${{ matrix.os }}
+        shell: bash
+    
+  conclusion:
+    needs: matrix-task
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./conclusion
+        id: conclusion
+      - name: assert conclusion
+        if: steps.conclusion.outputs.conclusion != 'success'
+        run: echo "::error::Conclusion mismatch (expected: success, got: ${{ steps.conclusion.outputs.conclusion }})"
