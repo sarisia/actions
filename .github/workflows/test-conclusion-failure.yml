@@ -25,4 +25,4 @@ jobs:
         id: conclusion
       - name: assert conclusion
         if: steps.conclusion.outputs.conclusion != 'failure'
-        run: echo "::error::Conclusion mismatch (expected: failure, got: ${{ steps.conclusion.outputs.conclusion }})"
+        run: echo "::error::Conclusion mismatch (expected:\ failure, got:\ ${{ steps.conclusion.outputs.conclusion }})"
