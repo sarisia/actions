@@ -21,6 +21,7 @@ jobs:
     needs: matrix-task
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./conclusion
         id: conclusion
       - name: assert conclusion
