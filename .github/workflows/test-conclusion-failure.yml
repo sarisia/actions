@@ -1,6 +1,9 @@
 name: test conclusion (failure)
 on:
   push:
+    paths:
+      - 'conclusion/**'
+
 
 jobs:
   matrix-task:

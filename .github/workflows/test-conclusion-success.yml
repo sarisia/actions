@@ -1,6 +1,8 @@
 name: test conclusion (success)
 on:
   push:
+    paths:
+      - 'conclusion/**'
 
 jobs:
   matrix-task:
