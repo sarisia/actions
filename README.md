@@ -25,8 +25,13 @@ jobs:
 ### `sarisia/actions/update-devcontainer@master`
 
 ```yaml
+name: update devcontainer
+on:
+  schedule:
+    - cron: '30 2 * * 3' # At 02:30 on Wednesday (weekly)
+
 jobs:
-  update-devcontainer:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
