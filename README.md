@@ -27,6 +27,14 @@ jobs:
 ```yaml
 name: update devcontainer
 on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '**'
+    paths:
+      - '.devcontainer/**'
   schedule:
     - cron: '30 2 * * 3' # At 02:30 on Wednesday (weekly)
 
