@@ -1,5 +1,6 @@
 name: test conclusion (success)
 on:
+  pull_request:
   push:
     paths:
       - 'conclusion/**'
