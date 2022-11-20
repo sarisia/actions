@@ -21,3 +21,16 @@ jobs:
           echo result is ${{ steps.conclusion.outputs.conclusion }}
           echo jobs is ${{ steps.conclusion.outputs.jobs }}
 ```
+
+### `sarisia/actions/update-devcontainer@master`
+
+```yaml
+jobs:
+  update-devcontainer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: sarisia/actions/update-devcontainer@main
+```
