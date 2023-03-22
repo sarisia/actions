@@ -17,4 +17,4 @@ jobs:
       # update-devcontainer
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
       - uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
-      - uses: devcontainers/ci@96af31b963e2ff6b5be0f96195a92f0c844c52b4
+      - uses: devcontainers/ci@72700878095f87b851a6c4405a16056caffdc577

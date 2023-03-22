@@ -20,7 +20,7 @@ runs:
         username: ${{ github.actor }}
         password: ${{ github.token }}
 
-    - uses: devcontainers/ci@96af31b963e2ff6b5be0f96195a92f0c844c52b4
+    - uses: devcontainers/ci@72700878095f87b851a6c4405a16056caffdc577
       with:
         imageName: ${{ inputs.imageName }}
         subFolder: ${{ inputs.subFolder }}
