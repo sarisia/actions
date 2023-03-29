@@ -1,6 +1,12 @@
 # actions
 Collection of reusable actions
 
+# Deprecated
+
+Use reusable workflows instead.
+
+https://github.com/sarisia/workflows
+
 ### `sarisia/actions/conclusion@main`
 
 ```yaml
