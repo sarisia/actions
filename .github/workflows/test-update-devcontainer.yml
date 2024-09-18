@@ -12,7 +12,7 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./update-devcontainer
         with:
           imageName: ghcr.io/${{ github.repository }}/test-update-devcontaienr
