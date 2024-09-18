@@ -23,14 +23,16 @@ runs:
   steps:
     - uses: tailscale/github-action@16d7e0b7812f55e668628a71630a09956522baa9
       with:
-        oauth-client-id: ${{ secrets.client-id }}
-        oauth-secret: ${{ secrets.client-secret }}
+        oauth-client-id: ${{ inputs.client-id }}
+        oauth-secret: ${{ inputs.client-secret }}
         tags: ${{ inputs.tags }}
         args: --ssh
         hostname: ${{ inputs.hostname }}
         version: ${{ inputs.version }}
 
     - run: sleep infinity
+      shell: bash
 
     - run: sudo tailscale logout
+      shell: bash
       if: ${{ always() }}
