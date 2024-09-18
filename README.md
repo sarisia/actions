@@ -44,3 +44,7 @@ jobs:
           tags: 'tag:github-actions,tag:test'
           hostname: 'actions'
 ```
+
+```
+$ ssh -o StrictHostKeyChecking=no runner@actions
+```
